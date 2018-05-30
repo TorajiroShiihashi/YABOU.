@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title what:</strong>
+  <%= @micropost.title_what %>
+</p>
+
+<p>
+  <strong>Title when:</strong>
+  <%= @micropost.title_when %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @micropost.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
+<%= link_to 'Back', microposts_path %>
