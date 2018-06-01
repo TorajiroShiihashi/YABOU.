@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :microposts
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/YABOU.' => "home#top"
-  get '/YABOU./about' => "home#about"
+  root 'home#top'
+  get '/YABOU.', to: "home#top"
+  get '/about', to: "home#about"
+  get '/contact', to: 'home#contact'
+  get '/signup' , to: 'users#new'
 end

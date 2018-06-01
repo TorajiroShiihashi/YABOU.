@@ -3,19 +3,19 @@
 <html lang="Ja">
   <head>
     <style media="screen">
-
       body {
         text-align: center;
         font-family: "Rubik", "Helvetica", "游ゴシック Medium",
-        "Yu Gothic Medium", "游ゴシック体", "游ゴシック",
-        "Yu Gothic", "a-otf-midashi-go-mb31-pr6n", "Hiragino Kaku Gothic ProN",
-         "Meiryo", "sans-serif";
+            "Yu Gothic Medium", "游ゴシック体", "游ゴシック",
+            "Yu Gothic", "a-otf-midashi-go-mb31-pr6n", "Hiragino Kaku Gothic ProN",
+             "Meiryo", "sans-serif";
+         background-image: url(/img_1.jpeg);
+         background-color: rgba(0, 0, 0, 0);
+         background-position: center;
+         background-size: cover;
       }
       .main-container{
-        background-image: url("app/assets/stylesheets/images/top_img_1.jpeg");
-        background-color: rgba(0, 0, 0, 0);
-        background-position: center center;
-        background-size: cover;
+         height: 700px;
       }
       .title {
         position: absolute;
@@ -64,6 +64,9 @@
           margin-top: 130px;
           font-weight: bold;
       }
+      a:visited{
+        color:white;
+      }
       .square_btn:hover {
           background: #ffffff;
           color: black;
@@ -75,14 +78,14 @@
     </style>
   </head>
   <body>
-    <div class="main-container" style="height: 810px; background-image: url("app/assets/stylesheets/images/top_img_1.jpeg");">
+    <div class="main-container" >
       <div class="main-wrapper" style="padding: 0px;">
         <div class="title">
           <h1 class="logo">YABOU.</h1>
           <p class="title_text">
             野望を叫ぼう。
           </p>
-          <a href="/posts/new" class="square_btn centered">新しい野望を叫ぶ</a>
+          <%= link_to "新しい野望を叫ぶ", signup_path, class: "square_btn centered" %>
         </div>
       </div>
     </div>

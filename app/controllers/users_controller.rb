@@ -2,10 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   attr_accessor :name, :email
 
-  def initialize(attributes = {})
-    @name  = attributes[:name]
-    @email = attributes[:email]
-  end
   # GET /users
   # GET /users.json
   def index
