@@ -13,6 +13,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'bootstrap-sass', '3.3.7'
 gem 'thin'
+gem 'bcrypt',       '3.1.11'
 
 group :development, :test do
   gem 'sqlite3',      '1.3.13'
@@ -28,6 +29,9 @@ group :development do
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  # エラー画面をわかりやすく整形してくれる
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do

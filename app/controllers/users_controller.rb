@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
   attr_accessor :name, :email
 
   # GET /users
@@ -9,32 +8,26 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1
-  # GET /users/1.json
   def show
+    @user = set_user
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
   end
 
   # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save # =>Validation
+      flash[:success] = "Welcome to YABOU."
+      redirect_to user_url(@user)
+      # GET "/users/#{@user.id}" => show
+    else
+      render 'new'
     end
   end
 
@@ -70,6 +63,9 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :twitter_id)
+      params.require(:user).permit(
+        :name, :email, :password,
+        :password_confirmation)
     end
+
 end
