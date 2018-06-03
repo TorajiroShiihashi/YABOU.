@@ -9,22 +9,27 @@
           <%= link_to "YABOU.とは", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/posts/new">投稿する</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/posts">投稿一覧</a>
+        </li>
+        <% if logged_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts/new">投稿する</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            アカウント
+            アカウント <b class="caret"></b>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/users">マイページ</a>
-            <a class="dropdown-item" href="#">ログアウト</a>
-          </div>
-          <li class="nav-item">
-            <%= link_to "お問い合わせ", contact_path, class: "nav-link" %>
-          </li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to "Profile", current_user, class: "nav-link" %></li>
+            <li><%= link_to "Settings", '#', class: "nav-link" %></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %>
+            </li>
+          </ul>
+          <% else %>
+            <li><%= link_to "Log in", login_path , class: "nav-link" %></li>
+          <% end %>
         </li>
       </ul>
     </div>
