@@ -4,12 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   # GET /users/1
   def show
     @user = set_user
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def new
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save # =>Validation
       log_in @user
       flash[:success] = "Welcome to YABOU."
-      redirect_to user_url(@user)
+      redirect_to @user
       # GET "/users/#{@user.id}" => show
     else
       render 'new'
@@ -68,5 +69,7 @@ class UsersController < ApplicationController
         :name, :email, :password,
         :password_confirmation)
     end
+
+
 
 end

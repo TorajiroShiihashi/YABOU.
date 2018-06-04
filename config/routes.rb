@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-  resources :microposts
   root 'home#top'
   get    '/YABOU.',  to: "home#top"
   get    '/about',   to: "home#about"
@@ -11,4 +10,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
+  resources :posts,  only: [:create, :destroy]
+
 end

@@ -12,8 +12,13 @@ gem 'jbuilder',     '2.6.4'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-will_paginate', '1.0.0'
 gem 'thin'
 gem 'bcrypt',       '3.1.11'
+gem 'will_paginate',           '3.1.6'
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0'
+gem 'fog',                     '1.40.0'
 
 group :development, :test do
   gem 'sqlite3',      '1.3.13'
@@ -22,6 +27,7 @@ group :development, :test do
   gem 'minitest-reporters', '1.1.14'
   gem 'guard', '2.13.0'
   gem 'guard-minitest', '2.4.4'
+  gem 'faker'
 end
 
 group :development do
