@@ -4,64 +4,91 @@
 <html lang="Ja">
   <head>
     <style media="screen">
+    body {
+      text-align: center;
+      font-family: "Rubik", "Helvetica", "游ゴシック Medium",
+          "Yu Gothic Medium", "游ゴシック体", "游ゴシック",
+          "Yu Gothic", "a-otf-midashi-go-mb31-pr6n", "Hiragino Kaku Gothic ProN",
+           "Meiryo", "sans-serif";
+       background-image: url(/img_2.jpeg);
+       background-color: rgba(0, 0, 0, 0);
+       background-position: center;
+       background-size: cover;
+       background-repeat: no-repeat;
+    }
+    .main-container{
+       height: 700px;
+    }
+    .title {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      height: 300px;
+      margin: auto;
+    }
+    .logo{
+      display: block;
+      width: 500px;
+      height: 103px;
+      margin: 0 auto;
+      line-height: 103px;
+      font-size: 120px;
+      letter-spacing: 10px;
+      font-weight: bold;
+      color: #ffffff;
+    }
 
-      body {
-        text-align: center;
-        font-family: "Rubik", "Helvetica", "游ゴシック Medium",
-        "Yu Gothic Medium", "游ゴシック体", "游ゴシック",
-        "Yu Gothic", "a-otf-midashi-go-mb31-pr6n", "Hiragino Kaku Gothic ProN",
-         "Meiryo", "sans-serif";
-      }
-      .main-container{
-        background-image: url("app/assets/stylesheets/images/img_1.jpeg");
-        background-color: rgba(0, 0, 0, 0);
-        background-position: center center;
-        background-size: cover;
-      }
-      .title {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 100;
-        height: 300px;
-        margin: auto;
-      }
-      .logo{
-        display: block;
-        width: 500px;
-        height: 103px;
-        margin: 0 auto;
-        line-height: 103px;
-        font-size: 120px;
-        letter-spacing: 10px;
-        font-weight: bold;
+    .title_text {
+      margin-top: 50px;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.6;
+      letter-spacing: 0.08em;
+      -webkit-font-smoothing: antialiased;
+      color: #ffffff;
+    }
+    .home_button_link{
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .square_btn {
+        display: inline-block;
+        padding: 15px 30px;
+        text-decoration: none;
         color: #ffffff;
-      }
-
-      .title_text {
-        margin-top: 50px;
-        font-size: 30px;
+        border: solid 2px #ffffff;
+        border-radius: 3px;
+        transition: .4s;
+        font-size: 16px;
+        margin-top: 130px;
         font-weight: bold;
-        line-height: 1.6;
-        letter-spacing: 0.08em;
-        -webkit-font-smoothing: antialiased;
-        color: #ffffff;
-      }
-      h1, div, p {
-          margin: 0;
-          padding: 0;
-      }
+    }
+    a:visited{
+      color:white;
+    }
+    .square_btn:hover {
+        background: #ffffff;
+        color: black;
+    }
+    h1, div, p {
+        margin: 0;
+        padding: 0;
+    }
     </style>
   </head>
   <body>
     <div class="main-container" style="height: 810px;">
       <div class="main-wrapper" style="padding: 0px;">
         <div class="title">
-          <h1 class="logo">YABOU.</h1>
+          <h1 class="logo">About</h1>
           <p class="title_text">
-            野望を叫ぼう。
+            僕らは、みんなうちに野望を秘めている。<br>
+            ただ中々”オモテ”に出せていない。<br>
+            野望をオモテに出して、声にして、実現しよう。
+
           </p>
         </div>
       </div>
