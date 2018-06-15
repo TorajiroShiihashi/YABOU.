@@ -5,6 +5,7 @@ module SessionsHelper #package
     session[:user_id] = user.id
   end
 
+<<<<<<< HEAD
   # ユーザーのセッションを永続的にする
  def remember(user)
    user.remember #ハッシュ化+登録+attribute
@@ -13,6 +14,14 @@ module SessionsHelper #package
  end
 
  # 記憶トークンcookieに対応するユーザーを返す
+=======
+  # 渡されたユーザーがログイン済みユーザーであればtrueを返す
+  def current_user?(user)
+    user == current_user
+  end
+
+  # 現在ログイン中のユーザーを返す (いる場合)
+>>>>>>> updating-users
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
@@ -30,6 +39,7 @@ module SessionsHelper #package
     !current_user.nil?
   end
 
+<<<<<<< HEAD
   # 永続的セッションを破棄する
  def forget(user)
    user.forget
@@ -37,10 +47,24 @@ module SessionsHelper #package
    cookies.delete(:remember_token)
  end
 
+=======
+>>>>>>> updating-users
    # 現在のユーザーをログアウトする
   def log_out
     forget(current_user)
     session.delete(:user_id)
     @current_user = nil
   end
+
+  # 記憶したURL (もしくはデフォルト値) にリダイレクト
+ def redirect_back_or(default)
+   redirect_to(session[:forwarding_url] || default)
+   session.delete(:forwarding_url)
+ end
+
+ # アクセスしようとしたURLを覚えておく
+ def store_location
+   session[:forwarding_url] = request.original_url if request.get?
+   #getが送られた時のみリクエスト先を取得→代入
+ end
 end

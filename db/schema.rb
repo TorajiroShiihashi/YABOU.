@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_06_04_153404) do
+=======
+ActiveRecord::Schema.define(version: 2018_06_14_185004) do
+>>>>>>> updating-users
 
   create_table "posts", force: :cascade do |t|
     t.string "title_when"
@@ -30,7 +34,11 @@ ActiveRecord::Schema.define(version: 2018_06_04_153404) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+<<<<<<< HEAD
     t.string "remember_digest"
+=======
+    t.boolean "admin", default: false
+>>>>>>> updating-users
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -3,14 +3,17 @@ class PostsController < ApplicationController
   before_action :correct_user,   only: :destroy
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.build(post_params) #loginしてること前提
     if @post.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "post created!"
       redirect_to root_url
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
-      render 'static_pages/home'
+      render '/YABOU.'
     end
+  end
+
+  def destroy
   end
 
   private
