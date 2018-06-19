@@ -1,0 +1,98 @@
+<% provide(:title, "New YABOU") %>
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///Users/shiihashitorajirou/Desktop/create/index.html#Plofile -->
+<html lang="Ja">
+  <head>
+    <style media="screen">
+    body {
+      text-align: center;
+      font-family: "Rubik", "Helvetica", "游ゴシック Medium",
+          "Yu Gothic Medium", "游ゴシック体", "游ゴシック",
+          "Yu Gothic", "a-otf-midashi-go-mb31-pr6n", "Hiragino Kaku Gothic ProN",
+           "Meiryo", "sans-serif";
+       background-image: url(/img_2.jpeg);
+       background-color: rgba(0, 0, 0, 0);
+       background-position: center;
+       background-size: cover;
+       background-repeat: no-repeat;
+    }
+    .main-container{
+       height: 540px;
+    }
+
+    .main-wrapper{
+      margin-top: 160px;
+    }
+
+    .title_text {
+      margin-top: 100px;
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 1.6;
+      letter-spacing: 0.08em;
+      -webkit-font-smoothing: antialiased;
+      color: #ffffff;
+    }
+
+  /* form */
+
+    .post_new_feild{
+      margin: auto;
+      width: 480px;
+      margin-top: 30px;
+    }
+
+    .post_label{
+      color: ghostwhite;
+      margin-top: 10px;
+      font-size: 22px;
+
+    }
+
+
+    testarea{
+      line-height: 150%;
+
+    }
+
+    /* btn */
+
+    .home_button_link{
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .square_btn {
+        display: inline-block;
+        padding: 15px 30px;
+        text-decoration: none;
+        color: #ffffff;
+        border: solid 2px #ffffff;
+        border-radius: 3px;
+        transition: .4s;
+        font-size: 16px;
+        margin-top: 130px;
+        font-weight: bold;
+    }
+    a:visited{
+      color:white;
+    }
+    .square_btn:hover {
+        background: #ffffff;
+        color: black;
+    }
+    h1, div, p {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-wrapper" style="padding: 0px;">
+        <p class="title_text">野望を叫ぼう</p>
+        <section class="post_form">
+          <%= render 'shared/post_form' %>
+        </section>
+      </div>
+    </div>
+  </body>

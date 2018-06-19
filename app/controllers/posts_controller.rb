@@ -2,10 +2,15 @@ class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
 
+
+  def new
+    @post = Post.new
+  end
+
   def create
     @post = current_user.posts.build(post_params) #loginしてること前提
     if @post.save
-      flash[:success] = "post created!"
+      flash[:success] = "Post created!"
       redirect_to root_url
     else
       @feed_items = current_user.feed.paginate(page: params[:page])

@@ -1,7 +1,14 @@
 <%= form_for(@post) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new post..." %>
+  <div class="post_new_feild">
+    <%= f.label :"いつから、いつまでに" ,class: "post_label"%>
+    <%= f.text_field :title_when, class: "form-control", placeholder: "明日から1ヶ月で" %>
+
+    <%= f.label :"なにを",class: "post_label" %>
+    <%= f.text_field :title_what, class: "form-control" ,placeholder: "３Kg痩せる！！" %>
+
+    <%= f.label :"どうやって",class: "post_label"%>
+    <%= f.text_area :content, rows: "5", class: "form-control", placeholder: "毎日筋トレと食事制限する！頑張る！" %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.submit "叫ぶ", class: "btn square_btn", style:"color: black; width: 200px; margin-top: 25px;"%>
 <% end %>

@@ -78,16 +78,28 @@
       }
     </style>
   </head>
-  <body>
-    <div class="main-container" >
-      <div class="main-wrapper" style="padding: 0px;">
-        <div class="title">
-          <h1 class="logo">YABOU.</h1>
-          <p class="title_text">
-            野望を叫ぼう。
-          </p>
-          <%= link_to "新しい野望を叫ぶ", signup_path, class: "square_btn centered" %>
+  <% if logged_in? %>
+    <body>
+      <div class="main-container" >
+        <div class="main-wrapper" style="padding: 0px;">
+          <div class="title">
+            <h1 class="logo">YABOU.</h1>
+            <p class="title_text">野望を叫ぼう。</p>
+            <%= link_to "野望を叫ぶ", posts_new_path, class: "square_btn centered" %>
+          </div>
         </div>
       </div>
-    </div>
-  </body>
+    </body>
+  <% else %>
+    <body>
+      <div class="main-container" >
+        <div class="main-wrapper" style="padding: 0px;">
+          <div class="title">
+            <h1 class="logo">YABOU.</h1>
+            <p class="title_text">野望を叫ぼう。</p>
+            <%= link_to "Sign up!!", signup_path, class: "square_btn centered" %>
+          </div>
+        </div>
+      </div>
+    </body>
+  <% end %>
