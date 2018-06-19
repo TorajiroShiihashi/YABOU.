@@ -23,6 +23,11 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
+  # 試作feedの定義
+  def feed
+    Post.where("user_id = ?", id)
+  end
+
   # ランダムなトークンを返す
   def self.new_token
     SecureRandom.urlsafe_base64
