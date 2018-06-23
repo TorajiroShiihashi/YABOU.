@@ -10,14 +10,17 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params) #loginしてること前提
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to user
+      redirect_to user_path
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      @feed_items = []
       render '/YABOU.'
     end
   end
 
   def destroy
+    @post.destroy
+      flash[:success] = "Post deleted"
+      redirect_to request.referrer || root_url
   end
 
   private

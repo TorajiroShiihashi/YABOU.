@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, url: posts_path ) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="post_new_feild">
     <%= f.label :"いつから、いつまでに" ,class: "post_label"%>
