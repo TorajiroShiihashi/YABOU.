@@ -8,10 +8,9 @@
       </h1>
     </section>
   </aside>
-  
   <div class="col-md-8">
     <% if @user.posts.any? %>
-      <h3>Posts (<%= @user.posts.count %>)</h3>
+      <h3><%= @user.name %>のYABOU. (<%= @user.posts.count %>)</h3>
       <ol class="posts">
         <%= render @posts %>
       </ol>
@@ -20,5 +19,5 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to '登録情報の編集', edit_user_path(@user) %> |
+<%= link_to '新しいYABOUを叫ぶ', new_post_path %>
